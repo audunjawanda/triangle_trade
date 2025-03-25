@@ -39,7 +39,7 @@ def get_rate(from_currency, to_currency):
 st.title("Triangle Arbitrage Calculator")
 
 # Define a list of currencies available for selection.
-currencies = ["USD", "EUR", "GBP", "JPY", "CHF", "AUD", "CAD"]
+currencies = ["USD", "EUR", "GBP", "JPY", "CHF", "AUD", "CAD", "NOK", "SEK", "NZD"]
 
 st.write("Select three currencies to form a triangle arbitrage cycle: A → B → C → A.")
 
@@ -73,4 +73,9 @@ else:
         st.write(f"Triangle arbitrage product: {triangle_product}")
 
         # Allow the user to set the threshold for detecting an arbitrage opportunity.
-      
+        threshold = st.number_input("Threshold for arbitrage detection", value=0.001, step=0.0001)
+
+        if abs(triangle_product - 1) > threshold:
+            st.success("Potential arbitrage opportunity detected!")
+        else:
+            st.info("No significant arbitrage opportunity at this time.")
