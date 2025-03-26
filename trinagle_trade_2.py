@@ -39,7 +39,7 @@ def get_rate(from_currency, to_currency):
 st.title("Triangle Arbitrage Calculator")
 
 # Define a list of currencies available for selection.
-currencies = ["USD", "EUR", "GBP", "JPY", "CHF", "AUD", "CAD", "NOK", "SEK", "NZD"]
+currencies = ["USD", "EUR", "GBP", "JPY", "CHF", "AUD", "CAD", "NOK", "SEK", "NZD","DKK"]
 
 st.write("Select three currencies to form a triangle arbitrage cycle: A → B → C → A.")
 
